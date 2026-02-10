@@ -1,22 +1,19 @@
 import random
 
-def main():
-    number = random.randint(1, 100)
+number = random.randint(1, 10)
+attempts = 0
 
-    while True:
-        try:
-            guess = int(input("Guess the number (1–100): "))
-        except ValueError:
-            continue
+while attempts < 5:
+    guess = int(input("Guess a number between 1 and 10: "))
+    attempts += 1
 
-        if guess < number:
-            print("Too small!")
-        elif guess > number:
-            print("Too large!")
-        else:
-            print("Correct!")
-            break
+    if guess == number:
+        print("You guessed it!")
+        break
+    elif guess < number:
+        print("Too low.")
+    else:
+        print("Too high.")
 
-
-if __name__ == "__main__":
-    main()
+if guess != number:
+    print(f"Sorry, the number was {number}.")
