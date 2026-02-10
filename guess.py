@@ -1,30 +1,10 @@
 import random
 
-def main():
-    while True:
-        try:
-            level = int(input("Level: "))
-            if level > 0:
-                break
-        except ValueError:
-            pass
+number = random.randint(1, 10)
 
-    number = random.randint(1, level)
+guess = int(input("Guess a number between 1 and 10: "))
 
-    while True:
-        try:
-            guess = int(input("Guess: "))
-        except ValueError:
-            continue
-
-        if guess < number:
-            print("Too small!")
-        elif guess > number:
-            print("Too large!")
-        else:
-            print("Just right!")
-            break
-
-
-if __name__ == "__main__":
-    main()
+if guess == number:
+    print("Correct!")
+else:
+    print(f"Wrong! The number was {number}.")
