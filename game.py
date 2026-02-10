@@ -11,9 +11,9 @@ while attempts < 5:
         print("You guessed it!")
         break
     elif guess < number:
-        print("Too low.")
+        print("Too small!")
     else:
-        print("Too high.")
+        print("Too large!")
 
 if guess != number:
     print(f"Sorry, the number was {number}.")
